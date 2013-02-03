@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+	<head>
+
+		<title>Ping Pong Battle</title>
+		<base href="http://localhost/coded/pingpong/">
+		<meta charset="utf8">
+		<meta name="generator" content="Geany 1.22">
+		<meta name="author" content="Dhiren Audich"> 
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" type="text/javascript"></script>
+		<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+	
+	</head>
+	
+	<body>
+		
+		<header>
+			<h1>Ping Pong Battle!</h1>
+		</header>
+
+	<div id="content">
+		<div id="stuff">
+			<div id="scoreboard">
+				<div class="score float-left tooltip">Player A: <span id="scoreA">00</span></div>
+				<div class="float-left" id="startgame">
+					<form class="tooltip" id="startbutton">
+						<button id="start" type="button" class="button" name="start">Start/Resume</button>
+						<span class="tool">Press button to Start the game and use <span class="green">Space bar</span> to Pause the game.</span>
+					</form>
+				</div>
+				<div class="score float-right tooltip">Player B: <span id="scoreB">00</span><span class="tool">To move paddle use <span class="green">UP</span> key for going UP and <span class="green">DOWN</span> key for going DOWN.</span></div>
+			</div>
+			<div id="game">
+				<div id="playground">
+					<div id="paddleA" class="paddle"></div>
+					<div id="paddleB" class="paddle"></div>
+					<div id="ball"></div>
+					<div id="pausegame">
+						<p>The game is paused.<br /> Click the <span class="red">Start/Resume</span> button to resume the game</p>
+					</div>
+					<div id="gameover">
+						<p><span class="red">GAME OVER!</span></p>
+					</div>
+					<div class="clear-both"></div>
+				</div>
+			</div>
+			<div id="options">
+				<form id="saveoptions">
+					<label for="ballspeed">Ball Speed: </label> <input id="ballspeed" class="short" type="text" maxlength="1" name="ballspeed" value="6">
+					<label for="maxscore">Max Score: </label><input id="maxscore" class="short" type="text" maxlength="2" name="maxscore" value="09">
+					<label for="paddlespeed">Paddle Speed: </label><input id="paddlespeed" class="short" type="text" maxlength="1" name="paddlespeed" value="3">
+				</form>
+			</div>
+		</div>
+		<div class="clear-both"></div>
+	</div>
+	
+	<script src="js/pb.js" type="text/javascript"></script>
+	<script src="js/jquery.timers-1.2.js" type="text/javascript"></script>
+
+	</body>
+
+</html>
